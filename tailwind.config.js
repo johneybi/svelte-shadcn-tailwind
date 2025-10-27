@@ -10,7 +10,7 @@ const config = {
 			center: true,
 			padding: "2rem",
 			screens: {
-				"2xl": "1400px"
+				"2xl": "1440px"
 			}
 		},
 		extend: {
@@ -47,7 +47,21 @@ const config = {
 				card: {
 					DEFAULT: "hsl(var(--card) / <alpha-value>)",
 					foreground: "hsl(var(--card-foreground) / <alpha-value>)"
+				},
+				dusty: {
+					50: "#f9fafa",
+					100: "#eef0ef",
+					200: "#e4e7e6",
+					300: "#d2d7d5",
+					400: "#9ba8a4",
+					500: "#687772",
+					600: "#535f5b",
+					700: "#3e4744",
+					800: "#2a302e",
+					900: "#151817",
 				}
+
+
 			},
 			borderRadius: {
 				lg: "var(--radius)",
