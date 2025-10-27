@@ -62,8 +62,8 @@
         <div class="flex items-center">
             <a href="/" class="flex items-center">
                 <img
-                    src="https://cdn.damoang.net/data/editor/64abd-66bd1f5106437-1c11615bec24fe4cc58fee1f83353fb0a939fa9c.svg"
-                    alt="다모앙"
+                    src="https://dummy.net/assets/logo.png"
+                    alt="logo"
                     class="h-12"
                 />
             </a>
