@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/static/split/WantedSans.min.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,6 +36,17 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --dusty-50: theme(colors.dusty.50);
+    --dusty-100: theme(colors.dusty.100);
+    --dusty-200: theme(colors.dusty.200);
+    --dusty-300: theme(colors.dusty.300);
+    --dusty-400: theme(colors.dusty.400);
+    --dusty-500: theme(colors.dusty.500);
+    --dusty-600: theme(colors.dusty.600);
+    --dusty-700: theme(colors.dusty.700);
+    --dusty-800: theme(colors.dusty.800);
+    --dusty-900: theme(colors.dusty.900);
   }
 
   .dark {
@@ -94,24 +107,24 @@
   }
 }
 
-	.bg-left-dusty::before {
-		content: '';
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		left: max(50vw, 720px);
-		background-color: theme('colors.dusty.100');
-		z-index: -1;
-	}
-	
-	.bg-right-dusty::before {
-		content: '';
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: max(50vw, 720px);
-		background-color: theme('colors.dusty.100');
-		z-index: -1;
-	}
+.bg-left-dusty::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: max(50vw, 720px);
+  background-color: theme('colors.dusty.100');
+  z-index: -1;
+}
+
+.bg-right-dusty::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: max(50vw, 720px);
+  background-color: theme('colors.dusty.100');
+  z-index: -1;
+}

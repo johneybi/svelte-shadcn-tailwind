@@ -57,7 +57,7 @@
     class:translate-y-0={isHeaderVisible}
     class:-translate-y-full={!isHeaderVisible}
 >
-    <div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-4">
+    <div class="mx-auto container flex h-16 items-center justify-between">
         <!-- 로고 -->
         <div class="flex items-center">
             <a href="/" class="flex items-center">
