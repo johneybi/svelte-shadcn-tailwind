@@ -3,7 +3,6 @@
     import Header from '$lib/components/layout/header.svelte';
     import Sidebar from '$lib/components/layout/sidebar.svelte';
     import Panel from '$lib/components/layout/panel.svelte';
-    // 필요 없으면 아래 세 개는 잠시 주석 처리
     import Footer from '$lib/components/layout/footer.svelte';
     import LeftBanner from '$lib/components/layout/left-banner.svelte';
     import RightBanner from '$lib/components/layout/right-banner.svelte';
@@ -11,12 +10,12 @@
     const { children } = $props(); // Svelte 5
     let snbPosition: 'left' | 'right' = 'left'; // 기본값
 
-    // style은 문자열 하나로 계산해 넣기
+    // 컨테이너 밖 배경
     const bg = () =>
         `linear-gradient(to right, ${
             snbPosition === 'left'
-                ? 'white 50%, var(--dusty-100) 50%'
-                : 'var(--dusty-100) 50%, white 50%'
+                ? 'hsl(var(--background)) 50%, hsl(var(--canvas)) 50%'
+                : 'hsl(var(--canvas)) 50%, hsl(var(--background)) 50%'
         })`;
 </script>
 
@@ -30,15 +29,16 @@
         <Header />
 
         <div class="mx-auto flex w-full flex-1 bg-transparent">
-            <aside class="hidden w-64 border-r bg-white md:block">
+            <aside class="hidden w-full bg-background md:block">
                 <Sidebar />
             </aside>
 
-            <main class="flex-1 overflow-y-auto rounded-t-xl bg-dusty-100 p-4 md:p-6">
+            <main class="main-panel min-w-[824px] flex-1 overflow-y-auto rounded-t-xl bg-canvas p-4 md:p-6">
                 {@render children()}
             </main>
+
             {#if snbPosition === 'left'}
-                <aside class="hidden w-80 border-l bg-dusty-50 my-6 rounded-md md:block">
+                <aside class="my-6 hidden min-w-[320px] rounded-md bg-subtle md:block">
                     <!-- 여기에 오른쪽 사이드바 내용 추가 -->
                     <Panel />
                 </aside>

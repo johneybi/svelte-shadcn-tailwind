@@ -53,7 +53,7 @@
 </script>
 
 <header
-    class="fixed left-0 right-0 top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur-sm transition-transform duration-300 ease-in-out dark:border-gray-700 dark:bg-gray-900/95"
+    class="fixed left-0 right-0 top-0 z-50 bg-background transition-transform duration-300 ease-in-out"
     class:translate-y-0={isHeaderVisible}
     class:-translate-y-full={!isHeaderVisible}
 >

@@ -11,7 +11,8 @@ const config = {
 			center: true,
 			padding: "2rem",
 			screens: {
-				"2xl": "1400px"
+				//pc 컨테이너 폭
+				"2xl": "1440px"
 			}
 		},
 		extend: {
@@ -20,6 +21,8 @@ const config = {
 				input: "hsl(var(--input) / <alpha-value>)",
 				ring: "hsl(var(--ring) / <alpha-value>)",
 				background: "hsl(var(--background) / <alpha-value>)",
+				subtle: "hsl(var(--subtle) / <alpha-value>)",
+				canvas: "hsl(var(--canvas) / <alpha-value>)",
 				foreground: "hsl(var(--foreground) / <alpha-value>)",
 				primary: {
 					DEFAULT: "hsl(var(--primary) / <alpha-value>)",
@@ -59,17 +62,19 @@ const config = {
 					border: "hsl(var(--sidebar-border))",
 					ring: "hsl(var(--sidebar-ring))",
 				},
+
+				// Dusty 색상 팔레트
 				dusty: {
-					50: "#f9fafa",
-					100: "#eef0ef",
-					200: "#e4e7e6",
-					300: "#d2d7d5",
-					400: "#9ba8a4",
-					500: "#687772",
-					600: "#535f5b",
-					700: "#3e4744",
-					800: "#2a302e",
-					900: "#151817",
+					50: "hsl(var(--dusty-50) / <alpha-value>)",
+					100: "hsl(var(--dusty-100) / <alpha-value>)",
+					200: "hsl(var(--dusty-200) / <alpha-value>)",
+					300: "hsl(var(--dusty-300) / <alpha-value>)",
+					400: "hsl(var(--dusty-400) / <alpha-value>)",
+					500: "hsl(var(--dusty-500) / <alpha-value>)",
+					600: "hsl(var(--dusty-600) / <alpha-value>)",
+					700: "hsl(var(--dusty-700) / <alpha-value>)",
+					800: "hsl(var(--dusty-800) / <alpha-value>)",
+					900: "hsl(var(--dusty-900) / <alpha-value>)",
 				},
 			},
 			borderRadius: {
@@ -78,6 +83,7 @@ const config = {
 				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)"
 			},
+			// 폰트 스택
 			fontFamily: {
 				sans: ["Wanted Sans Variable", "Wanted Sans", "-apple-system", "BlinkMacSystemFont", "system-ui", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "sans-serif"],
 			},
