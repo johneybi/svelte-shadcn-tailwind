@@ -43,9 +43,9 @@
     <!-- 상단 섹션 -->
     <div class="mx-auto container px-4 py-8">
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <!-- 앙포털 -->
+            <!-- Portal -->
             <div>
-                <h3 class="mb-4 text-lg font-semibold text-gray-900">앙포털</h3>
+                <h3 class="mb-4 text-lg font-semibold text-gray-900">Portal</h3>
                 <ul class="space-y-2">
                     {#each dummyPortalLinks as link}
                         <li>
@@ -100,7 +100,7 @@
                 </ul>
             </div>
 
-            <!-- 🚨삐앙삐앙🚨 -->
+            <!-- 🚨Alert🚨 -->
             <div>
                 <h3 class="mb-4 text-lg font-semibold text-red-600">🚨Alert🚨</h3>
                 <ul class="space-y-2">
