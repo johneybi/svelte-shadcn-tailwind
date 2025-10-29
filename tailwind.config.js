@@ -11,11 +11,13 @@ const config = {
 			center: true,
 			padding: "2rem",
 			screens: {
-				//pc 컨테이너 폭
-				"2xl": "1440px"
+				"2xl": "1440px" // PC 컨테이너 최대 너비를 1440px로 설정
 			}
 		},
 		extend: {
+			screens: {
+				"2xl": "1440px"
+			},
 			colors: {
 				border: "hsl(var(--border) / <alpha-value>)",
 				input: "hsl(var(--input) / <alpha-value>)",

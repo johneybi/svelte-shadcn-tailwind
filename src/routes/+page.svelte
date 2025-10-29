@@ -4,7 +4,7 @@
 </script>
 
 <div class="flex flex-col gap-4">
-    <div class="flex-col items-center justify-center rounded-md bg-background p-6">
+    <div class="flex-col items-center justify-center rounded-md bg-background p-6 border">
         <h1 class="mb-4 text-2xl font-bold">스크롤 테스트</h1>
         {#each items as item}
             <p class="py-2">스크롤 테스트 중입니다. #{item}</p>

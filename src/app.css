@@ -21,20 +21,20 @@
     --dusty-800: 160 7% 18%;
     --dusty-900: 160 7% 9%; */
 
---dusty-50: 200 8% 98%;
---dusty-100: 195 6% 95%;
---dusty-200: 190 5% 90%;
---dusty-300: 185 5% 82%;
---dusty-400: 180 5% 66%;
---dusty-500: 180 5% 50%;
---dusty-600: 180 6% 38%;
---dusty-700: 180 6% 28%;
---dusty-800: 180 7% 18%;
---dusty-900: 180 7% 11%;
+    --dusty-50: 200 8% 98%;
+    --dusty-100: 195 6% 95%;
+    --dusty-200: 190 5% 90%;
+    --dusty-300: 185 5% 82%;
+    --dusty-400: 180 5% 66%;
+    --dusty-500: 180 5% 50%;
+    --dusty-600: 180 6% 38%;
+    --dusty-700: 180 6% 28%;
+    --dusty-800: 180 7% 18%;
+    --dusty-900: 180 7% 11%;
 
     --background: 0 0% 100%;
     --canvas: var(--dusty-100);
-    --subtle: var(--dusty-50);
+    --subtle: var(--dusty-200);
     --foreground: 0 0% 3.9%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
@@ -75,7 +75,7 @@
     --popover-foreground: 0 0% 98%;
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
+    --border: var(--dusty-700);
     --input: 0 0% 14.9%;
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
@@ -117,6 +117,12 @@
     border-color: transparent !important;
     border-width: 0 !important;
   } */
+
+  @layer utilities {
+    .container {
+      @apply px-0 md:px-8;
+    }
+  }
 
   * {
     @apply border-border;
