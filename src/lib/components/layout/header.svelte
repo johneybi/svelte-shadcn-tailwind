@@ -14,6 +14,7 @@
     let lastScrollY = $state(0);
     let isDrawerOpen = $state(false);
     let isDarkMode = $state(false);
+    let isScrolled = $state(false);
 
     // 스크롤 이벤트 핸들러
     function handleScroll() {
@@ -27,6 +28,9 @@
             // 위로 스크롤 시 헤더 표시
             isHeaderVisible = true;
         }
+
+        // 스크롤 여부에 따라 isScrolled 상태 업데이트
+        isScrolled = currentScrollY > 0;
 
         lastScrollY = currentScrollY;
     }
@@ -53,19 +57,17 @@
 </script>
 
 <header
-    class="fixed left-0 right-0 top-0 z-50 bg-background transition-transform duration-300 ease-in-out"
+    class="bg-background border-dusty-300 fixed left-0 right-0 top-0 z-50 transition-transform duration-300 ease-in-out"
     class:translate-y-0={isHeaderVisible}
     class:-translate-y-full={!isHeaderVisible}
+    class:shadow-sm={isScrolled}
+    class:border-b={isScrolled}
 >
-    <div class="mx-auto container flex h-16 items-center justify-between">
+    <div class="container mx-auto flex h-12 items-center justify-between md:h-16">
         <!-- 로고 -->
         <div class="flex items-center">
             <a href="/" class="flex items-center">
-                <img
-                    src="https://dummy.net/assets/logo.png"
-                    alt="logo"
-                    class="h-12"
-                />
+                <img src="https://dummy.net/assets/logo.png" alt="logo" class="h-12" />
             </a>
         </div>
 
@@ -196,4 +198,4 @@
 </div>
 
 <!-- 헤더 높이만큼 상단 패딩 추가 -->
-<div class="h-16"></div>
+<div class="h-12 sm:h-16"></div>

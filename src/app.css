@@ -1,136 +1,223 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
 @import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/static/split/WantedSans.min.css");
 @import './styles/base.css';
 @import './styles/layout.css';
 @import './styles/components.css';
 @import './styles/utilities.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@custom-variant dark (&:where(.dark, .dark *));
 
-@layer base {
-  :root {
-    /* --dusty-50: 180 9% 98%;
-    --dusty-100: 150 6% 94%;
-    --dusty-200: 160 6% 90%;
-    --dusty-300: 156 6% 83%;
-    --dusty-400: 162 7% 63%;
-    --dusty-500: 160 7% 44%;
-    --dusty-600: 160 7% 35%;
-    --dusty-700: 160 7% 26%;
-    --dusty-800: 160 7% 18%;
-    --dusty-900: 160 7% 9%; */
+:root {
+    --radius: 0.625rem;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.129 0.042 264.695);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.129 0.042 264.695);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.129 0.042 264.695);
+    --primary: oklch(0.208 0.042 265.755);
+    --primary-foreground: oklch(0.984 0.003 247.858);
+    --secondary: oklch(0.968 0.007 247.896);
+    --secondary-foreground: oklch(0.208 0.042 265.755);
+    --muted: oklch(0.968 0.007 247.896);
+    --muted-foreground: oklch(0.554 0.046 257.417);
+    --accent: oklch(0.968 0.007 247.896);
+    --accent-foreground: oklch(0.208 0.042 265.755);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.889 0.005 203.53);
+    --input: oklch(0.929 0.013 255.508);
+    --ring: oklch(0.704 0.04 256.788);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --sidebar: oklch(0.984 0.003 247.858);
+    --sidebar-foreground: oklch(0.129 0.042 264.695);
+    --sidebar-primary: oklch(0.208 0.042 265.755);
+    --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-accent: oklch(0.968 0.007 247.896);
+    --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+    --sidebar-border: oklch(0.929 0.013 255.508);
+    --sidebar-ring: oklch(0.704 0.04 256.788);
+    --canvas-color: oklch(0.9623 0.001334 219.5175);
+    --subtle-color: oklch(0.9245 0.0024 211.04);
+}
 
-    --dusty-50: 200 8% 98%;
-    --dusty-100: 195 6% 95%;
-    --dusty-200: 190 5% 90%;
-    --dusty-300: 185 5% 82%;
-    --dusty-400: 180 5% 66%;
-    --dusty-500: 180 5% 50%;
-    --dusty-600: 180 6% 38%;
-    --dusty-700: 180 6% 28%;
-    --dusty-800: 180 7% 18%;
-    --dusty-900: 180 7% 11%;
+.dark {
+    --background: oklch(0.231 0.006 196.75);
+    --foreground: oklch(0.984 0.003 247.858);
+    --card: oklch(0.208 0.042 265.755);
+    --card-foreground: oklch(0.984 0.003 247.858);
+    --popover: oklch(0.208 0.042 265.755);
+    --popover-foreground: oklch(0.984 0.003 247.858);
+    --primary: oklch(0.929 0.013 255.508);
+    --primary-foreground: oklch(0.208 0.042 265.755);
+    --secondary: oklch(0.279 0.041 260.031);
+    --secondary-foreground: oklch(0.984 0.003 247.858);
+    --muted: oklch(0.279 0.041 260.031);
+    --muted-foreground: oklch(0.704 0.04 256.788);
+    --accent: oklch(0.279 0.041 260.031);
+    --accent-foreground: oklch(0.984 0.003 247.858);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(0.408 0.011 196.73);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.551 0.027 264.364);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.208 0.042 265.755);
+    --sidebar-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-accent: oklch(0.279 0.041 260.031);
+    --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.551 0.027 264.364);
+    --canvas-color: oklch(0.269 0.008 196.73);
+    --subtle-color: oklch(0.307 0.009 196.7);
+}
 
-    --background: 0 0% 100%;
-    --canvas: var(--dusty-100);
-    --subtle: var(--dusty-200);
-    --foreground: 0 0% 3.9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --border: var(--dusty-300);
-    --input: 0 0% 89.8%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 72.2% 50.6%;
-    --destructive-foreground: 0 0% 98%;
-    --ring: 0 0% 3.9%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: var(--dusty-300);
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+@theme {
+    /* Dusty 색상 팔레트 */
+    --color-dusty-50: hsl(200 8% 98%);
+    --color-dusty-100: hsl(195 6% 95%);
+    --color-dusty-200: hsl(190 5% 90%);
+    --color-dusty-300: hsl(185 5% 82%);
+    --color-dusty-400: hsl(180 5% 66%);
+    --color-dusty-500: hsl(180 5% 50%);
+    --color-dusty-600: hsl(180 6% 38%);
+    --color-dusty-700: hsl(180 6% 28%);
+    --color-dusty-800: hsl(180 7% 18%);
+    --color-dusty-900: hsl(180 7% 11%);
 
-  .dark {
-    --background: var(--dusty-800);
-    --canvas: var(--dusty-900);
-    --subtle: var(--dusty-800);
-    --foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --border: var(--dusty-700);
-    --input: 0 0% 14.9%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --ring: 0 0% 83.1%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+    /* 스크린 브레이크포인트 */
+    --breakpoint-2xl: 1440px;
+
+    /* 폰트 스택 */
+    --font-sans: "Wanted Sans Variable", "Wanted Sans",
+        -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI",
+        "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        sans-serif;
+}
+
+
+@theme inline {
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --color-background: var(--background);
+    --color-canvas: var(--canvas-color);
+    --color-subtle: var(--subtle-color);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+.dark {
+    --color-background: oklch(0.231 0.006 196.75);
+    --color-canvas: oklch(0.269 0.008 196.73);
+    --color-subtle: oklch(0.307 0.009 196.7);
+    --color-border: oklch(0.408 0.011 196.73);
 }
 
 @layer base {
-
-  /* :where(button,
-    input,
-    textarea,
-    select,
-    hr,
-    img,
-    video,
-    table,
-    th,
-    td,
-    fieldset) {
-    @apply border-border;
-  } */
-
-  /* :where(header, main, footer, section, nav, aside, article, div[class*="container"]) {
-    border-color: transparent !important;
-    border-width: 0 !important;
-  } */
-
-  @layer utilities {
-    .container {
-      @apply px-0 md:px-8;
+    * {
+        @apply border-border outline-ring/50;
     }
-  }
 
-  * {
-    @apply border-border;
-  }
+    /* 1) 기본 폰트 적용 + 스무딩(맥), 커닝/리거처 통일 */
+    html {
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+        /* macOS */
+        -moz-osx-font-smoothing: grayscale;
+        /* macOS */
+        text-rendering: optimizeLegibility;
+        font-kerning: normal;
+        font-feature-settings: "kern", "liga";
+        font-optical-sizing: none;
+        /* 가변폰트 옵티컬 보정 끔 */
+        font-synthesis-weight: none;
+        /* 합성 볼드 끔 */
+        font-synthesis-style: none;
+    }
 
+    body {
+        @apply text-base leading-relaxed bg-background text-foreground;
+    }
 
+    /* 2) 모든 요소가 html의 폰트/옵션을 ‘상속’하도록 고정 */
+    *,
+    ::before,
+    ::after {
+        font-family: inherit;
+        font-kerning: inherit;
+        font-feature-settings: inherit;
+        font-optical-sizing: inherit;
+        font-synthesis-weight: inherit;
+        font-synthesis-style: inherit;
+    }
 
-  body {
-    @apply bg-background text-foreground;
-  }
+    /* 3) 기본 가중치 강제(가변폰트일 때 wght 축도 고정) */
+    body {
+        @apply bg-background text-foreground;
+        @apply text-base leading-relaxed;
+        font-weight: 400;
+        /* == font-normal */
+        font-variation-settings: "wght" 400;
+        /* 가변축 직접 고정 */
+    }
+
+    /* 4) 제목 두께도 명시(브라우저 합성볼드 방지용) */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700;
+        font-variation-settings: "wght" 700;
+    }
+}
+
+@layer utilities {
+    .container {
+        @apply mx-auto px-0 md:px-6;
+        max-width: 1440px;
+    }
 }

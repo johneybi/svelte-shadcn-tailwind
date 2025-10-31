@@ -2,7 +2,7 @@
     // 현재 연도 자동 계산
     const currentYear = new Date().getFullYear();
 
-    // 앙포털 메뉴
+    // 메뉴
     const dummyPortalLinks = [
         { name: 'Dummy Map - Map', href: 'https://dummy.net/map' },
         { name: 'Dummy Reviews - Reviews', href: 'https://dummy.net/reviews' },
@@ -12,7 +12,7 @@
         { name: 'X (구 트위터)', href: 'https://x.com/@dummy', external: true }
     ];
 
-    // 함께만들어가요 메뉴
+    // 메뉴
     const dummyTogetherLinks = [
         { name: 'Notices', href: 'https://dummy.net/notice' },
         { name: 'Maintenance (Bug Report)', href: 'https://dummy.net/bug' },
@@ -22,14 +22,14 @@
         { name: 'Dummy Ads', href: 'https://damoang.net/content/advertisement', external: true }
     ];
 
-    // 시스템 메뉴
+    // 메뉴
     const dummySystemLinks = [
         { name: 'Point Info', href: 'https://dummy.net/content/info' },
         { name: 'Level Info', href: 'https://dummy.net/content/level' },
         { name: 'New Posts', href: 'https://dummy.net/bbs/new.php', external: true }
     ];
 
-    // 🚨삐앙삐앙🚨 메뉴
+    // 메뉴
     const dummyEmergencyLinks = [
         { name: 'Dummy Report', href: 'https://dummy.net/report' },
         { name: 'Appeal Board', href: 'https://dummy.net/claim' },
@@ -39,7 +39,7 @@
     ];
 </script>
 
-<footer class="w-full border-t border-dusty-200 bg-dusty-50 text-gray-800">
+<footer class="w-full border-t border-dusty-300 bg-dusty-50 text-gray-800">
     <!-- 상단 섹션 -->
     <div class="mx-auto container px-4 py-8">
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
